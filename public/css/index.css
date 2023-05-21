@@ -1,0 +1,142 @@
+*{
+    padding: 0; margin: 0; box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url('/images/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.firstdiv{
+    min-height: 100vh;
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+
+.button{
+    position: relative;
+    font-size: x-large;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    padding: 2px 3px 2px 3px;
+    background: rgba(0, 0, 0, 0.2);
+    color: whitesmoke;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.button:hover{
+    color: black;
+}
+
+.button::before{ 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 0%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    /*
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: linear;
+    */
+    transition-property: width, transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.button:hover::before{
+    width: 100%;
+}
+
+/*
+.anim::before{
+    transform: scaleX(0);
+}
+
+.anim:hover::before{
+    transform: scaleY(1);
+}
+*/
+
+/* Weather middle box */
+
+.weatherbox{
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: whitesmoke;
+    padding: 20px;
+    font-size: xx-large;
+    font-family: 'Roboto', sans-serif;
+}
+
+.weatherbox > .infobox{
+    position: absolute;
+    bottom: 5%;
+    right: -40%;
+    font-size: small;
+    padding: 10px;
+    width: 150px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translate3d(0,20px,0);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+}
+
+.weatherbox:hover .infobox{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+}
+
+/* Input box and its components */
+
+.inputbox{
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Roboto', sans-serif;
+}
+
+.inputbox input{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(245, 245, 245, 0.9);
+    padding: 10px;
+    font-size: x-large;
+}
+
+.inputbox button{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(245, 245, 245, 0.9);
+    padding: 10px;
+    font-size: x-large;
+    margin-left: 5px;
+}
