@@ -1,0 +1,35 @@
+.thirddiv{
+    min-height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    font-family: 'Roboto', sans-serif;
+}
+
+.textwrapper{
+    text-align: center;
+    color: whitesmoke;
+    font-size: xx-large;
+    padding: 20px;
+    font-family: 'Spectral', serif;
+    letter-spacing: 8px;
+    position: relative;
+}
+
+.sub3-1{
+    text-align: center;
+    color: whitesmoke;
+    font-size: medium;
+    padding: 20px;
+    font-family: 'Spectral', serif;
+    letter-spacing: 5px;
+    position: absolute;
+    transform: translate3d(-100px,0,0);
+    transition-property: all;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-in;
+    opacity: 0;
+}
+
+.sub3-1-fade{
+    transform: translate3d(0,0,0);
+    opacity: 1;
+}

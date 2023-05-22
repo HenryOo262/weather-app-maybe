@@ -10,39 +10,33 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.get('/',(req,res)=>{
+    // get the weather data of city 
     axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=16.871311&lon=96.199379&appid=${process.env.API}`)
     .then((response)=>{
-        console.log(response.data)
+        // render the page
         res.render('index',
         {
-            data:response.data.main.temp, type:response.data.weather[0].main, 
+            temp:response.data.main.temp, type:response.data.weather[0].main, 
             location:['Yangon','MM'], 
             icon:`/images/${response.data.weather[0].icon}.png`,
             info:[response.data.main.feels_like, response.data.main.pressure, response.data.main.humidity]
         })
     })
-    .catch((error)=>{
-        console.log(error)
-    })
-    .finally(()=>{
-        console.log('response received')
-    })
 })
 
 app.post('/',(req,res)=>{
-    console.log(req.body.location)
+    // get the lon and lat of the city
     axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${req.body.location}&limit=1&appid=${process.env.API}`)
     .then((response)=>{
-        //console.log(response.data)
         city = req.body.location
         country = response.data[0].country
+        // get the weather data of the city using lon and lat
         // start
         axios.get(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${response.data[0].lat}&lon=${response.data[0].lat}&appid=${process.env.API}`)
         .then((response)=>{
-            console.log(response.data.weather[0])
             res.render('index',
             {
-                data:response.data.main.temp, 
+                temp:response.data.main.temp, 
                 type:response.data.weather[0].main, location:[city,country], 
                 icon: `/images/${response.data.weather[0].icon}.png`,
                 info:[response.data.main.feels_like, response.data.main.pressure, response.data.main.humidity]
@@ -50,12 +44,10 @@ app.post('/',(req,res)=>{
         })
         // end
     })
-    .catch((error)=>{
-        console.log(error)
-    })
-    .finally(()=>{
-        console.log('succeed posting')
-    })
+})
+
+app.get('/:city',(req,res)=>{
+    res.send(req.params.city)
 })
 
 app.use((req,res)=>{

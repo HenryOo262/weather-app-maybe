@@ -1,20 +1,16 @@
 
 const discover  = document.querySelector('#discover')
+const surreal  = document.querySelector('#surreal')
 const firstdiv  = document.querySelector('.firstdiv')
 const seconddiv = document.querySelector('.seconddiv')
-
-const cards     = document.querySelectorAll('.card')
+const thirddiv  = document.querySelector('.thirddiv')
 
 function scrolldiscover(){
     seconddiv.scrollIntoView()
 }
-
-function cardclick(){
-    console.log(cards)
+function scrollsurreal(){
+    thirddiv.scrollIntoView()
 }
 
 discover.addEventListener('click',scrolldiscover)
-
-cards.forEach((item)=>{
-    item.addEventListener('click',cardclick)
-})
+surreal.addEventListener('click',scrollsurreal)
