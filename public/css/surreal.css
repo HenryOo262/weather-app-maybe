@@ -2,9 +2,10 @@
     min-height: 100vh;
     background-color: rgba(0,0,0,0.6);
     font-family: 'Roboto', sans-serif;
+    padding: 10px;
 }
 
-.textwrapper{
+.textWrapper{
     text-align: center;
     color: whitesmoke;
     font-size: xx-large;
@@ -32,4 +33,75 @@
 .sub3-1-fade{
     transform: translate3d(0,0,0);
     opacity: 1;
+}
+
+.gridWrapper{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentWrapper3{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    place-items: center;
+    gap: 50px;
+}
+
+.card3{
+    width: 500px;
+    height: 500px;
+    background-color: whitesmoke;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.card3 img{
+    width: calc(100% + 50px);
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card3 > .child3-1{
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) rotateY(0deg) rotate(45deg);
+    opacity: 0;
+    border-color: whitesmoke;
+    border-width: 3px;
+    border-style: solid;
+    transition-property: height, width, opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+}
+
+.card3:hover .child3-1{
+    width:45%;
+    height: 45%;
+    opacity: 1;
+}
+
+.child3-2{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: whitesmoke;
+    font-size: xx-large;
+    font-family: 'Spectral', serif;
+}
+
+.child3-2::second-word{
+    font-weight: bold;
 }

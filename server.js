@@ -46,8 +46,29 @@ app.post('/',(req,res)=>{
     })
 })
 
-app.get('/:city',(req,res)=>{
-    res.send(req.params.city)
+app.get('/discover',(req,res)=>{
+    res.render('discover')
+    console.log('discover')
+})
+
+app.get('/discover/:city',(req,res)=>{
+    switch(req.params.city){
+        case 'fukuoka' :
+            res.redirect('https://www.city.fukuoka.lg.jp/english/')
+            break
+        case 'paris' :
+            res.redirect('https://www.paris.fr/')
+            break
+        case 'kyoto' :
+            res.redirect('https://www.city.kyoto.lg.jp/')
+            break
+        default:
+            break
+    }
+})
+
+app.get('/surreal',(req,res)=>{
+    res.render('surreal')
 })
 
 app.use((req,res)=>{

@@ -4,10 +4,10 @@ function surrealText(){
 
     data = sub3_1.getBoundingClientRect()
     console.log(data.top)
-    if(data.top <= 70){
+    if(data.top <= 100){
         sub3_1.classList.add('sub3-1-fade')
     }
 
 }
 
-document.addEventListener('scroll',surrealText)
+document.addEventListener('DOMContentLoaded',surrealText)
