@@ -2,6 +2,9 @@
 .seconddiv{
     height: 100vh;
     background-color: rgba(0,0,0,0.4);
+}
+
+.cardWrapper{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
