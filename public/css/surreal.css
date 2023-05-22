@@ -39,7 +39,7 @@
     margin-top: 80px;
     margin-bottom: 80px;
     display: flex;
-    flex-direction: center;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -61,14 +61,54 @@
     border-radius: 4px;
 }
 
-.card3 img{
+/* image variants */
+
+.image3-1{
     width: calc(100% + 50px);
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
 }
 
-.card3 > .child3-1{
+.card3:hover .image3-1{
+    transform: translate(-30px,0);
+}
+
+.image3-2{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.2);
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+}
+
+.card3:hover .image3-2{
+    transform: scale(1);
+}
+
+.image3-3{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+}
+
+.card3:hover .image3-3{
+    transform: scale(1.06);
+}
+
+/* child variants */
+
+.child3-1{
     position: absolute;
     width: 0;
     height: 0;
@@ -100,8 +140,167 @@
     color: whitesmoke;
     font-size: xx-large;
     font-family: 'Spectral', serif;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    opacity: 1;
 }
 
-.child3-2::second-word{
-    font-weight: bold;
+.card3:hover .child3-2{
+    opacity: 0;
+}
+
+.child3-3{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: whitesmoke;
+    font-size: small;
+    font-family: 'Spectral', serif;
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    opacity: 0;
+}
+
+.card3:hover .child3-3{
+    opacity: 1;
+}
+
+/* //////////////////////////////////////////////////////////////// */
+
+.child3-4{
+    position: absolute;
+    z-index: 2;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: whitesmoke;
+    font-size: xx-large;
+    font-family: 'Spectral', serif;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+}
+
+.card3:hover .child3-4{
+    top: 45%
+}
+
+.child3-5{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    height: 0.5px;
+    width: 400px;
+    transform: translate(-50%,-50%);
+    color: whitesmoke;
+    border-width: 0.5px;
+    border-color: whitesmoke;
+    border-style: solid;
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+}
+
+.card3:hover .child3-5-1{
+    transform: translate(-50%,-50%) rotateY(0deg) rotate(45deg);
+}
+
+.card3:hover .child3-5-2{
+    transform: translate(-50%,-50%) rotateY(0deg) rotate(-45deg);
+}
+
+.child3-6{
+    position: absolute;
+    z-index: 2;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: whitesmoke;
+    font-size: medium;
+    font-family: 'Spectral', serif;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+}
+
+.card3:hover .child3-6{
+    top: 60%;
+}
+
+.child3-7{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(95, 158, 160, 0.3);
+    transition-property: opacity;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    opacity: 0;
+}
+
+.card3:hover .child3-7{
+    opacity: 1;
+}
+
+/* ///////////////////////////////////////////////////////// */
+
+.child3-8{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    z-index: 2;
+    display: grid;
+    grid-template-rows: 1fr 2fr;    /* minmax(20px,1fr) 1fr ma ya */
+}
+
+.child3-9{
+    color: whitesmoke;
+    font-size: xx-large;
+    font-family: 'Spectral', serif;
+}
+
+.child3-10{
+    background-color: rgba(255,255,255,0.8);
+    color: rgba(0,0,0,0.8);
+    font-size: medium;
+    padding: 5px;
+    margin: 5px;
+    transform: translate(-40px,0);
+    transition-property: transform, opacity;
+    transition-timing-function: ease-in;
+    opacity: 0;
+}
+
+.child3-10-1{
+    transition-duration: 0.4s;
+}
+
+.child3-10-2{
+    transition-duration: 0.6s;
+}
+
+.child3-10-3{
+    transition-duration: 0.8s;
+}
+
+.card3:hover .child3-10-1{
+    transform: translate(0,0);
+    opacity: 1;
+}
+
+.card3:hover .child3-10-2{
+    transform: translate(0,0);
+    opacity: 1;
+}
+
+.card3:hover .child3-10-3{
+    transform: translate(0,0);
+    opacity: 1;
 }
