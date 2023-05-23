@@ -48,7 +48,6 @@ app.post('/',(req,res)=>{
 
 app.get('/discover',(req,res)=>{
     res.render('discover')
-    console.log('discover')
 })
 
 app.get('/discover/:city',(req,res)=>{
