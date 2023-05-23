@@ -8,5 +8,5 @@ This NodeJs SSR web app contains fetching the current weather data of cities. Th
 
 Deployed url : (https://surreal-web-page.vercel.app/)
 
-As I couldn't deployed the whole web app. I deployed the hover effect web page of vercel.
+As I couldn't deploy the whole web app. I deployed the hover effect web page of vercel.
 Please Note that both the project and web page are not finished and bound to change and improve.
